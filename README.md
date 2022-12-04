@@ -1,24 +1,11 @@
-# Qwitter (qwitter)
+# Qwitter
 
-A Quasar Project
+## Explicación del proyecto
+Siguiendo el tutorial de FreeCodeCamp, la intención es crear un clon de twitter para iOS, Android, Mac y Windows utilizando Quasar como base.
 
-## Install the dependencies
-```bash
-yarn
-# or
-npm install
-```
+## Tecnologías a usar 
+Vuejs, Quasar (mi primera vez utilizando el framework)
 
-### Start the app in development mode (hot-code reloading, error reporting, etc.)
-```bash
-quasar dev
-```
-
-
-### Build the app for production
-```bash
-quasar build
-```
-
-### Customize the configuration
-See [Configuring quasar.config.js](https://v2.quasar.dev/quasar-cli-webpack/quasar-config-js).
+## Expectativas
+ - Perfeccionar mis habilidades con Vuejs.
+ - Aprender los conceptos básicos de Quasar y entender sus ventajas y desventajas.

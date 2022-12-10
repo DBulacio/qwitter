@@ -42,9 +42,13 @@
             color="grey-2" 
         />
 
-        <!-- nuevos qweets -->
-    <q-list>
-        <q-item class="q-py-md">
+    <!-- nuevos qweets -->
+    <q-list separator>
+        <q-item
+            v-for="qweet in qweets"
+            :key="qweet.date"
+            class="q-py-md"
+        >
             <q-item-section avatar top>
                 <q-avatar size="xl">
                     <img src="https://cdn.quasar.dev/img/avatar5.jpg">
@@ -59,9 +63,7 @@
                     </span>
                 </q-item-label>
                 <q-item-label class="qweet-content text-body1">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque voluptatem quaerat facilis! 
-                    
-                    Aliquam cumque ipsum odio sit laudantium. Ratione corporis itaque aliquam atque molestiae ea aperiam, nihil ut tenetur distinctio?
+                    {{qweet.content}}
                 </q-item-label>
 
                 <!-- botones de interacción -->
@@ -98,7 +100,8 @@
             </q-item-section>
 
             <q-item-section side top>
-                1 min ago
+                <!-- date-fns para que muestre la fecha relativa -->
+                {{ qweet.date }}
             </q-item-section>
         </q-item>
     </q-list>
@@ -113,7 +116,19 @@ export default defineComponent({
     name: 'PageHome',
     data() {
         return {
-            newQweetContent: ""
+            newQweetContent: "",
+            qweets: [
+                {
+                    id: 1,
+                    content: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque voluptatem quaerat facilis! iquam cumque ipsum odio sit laudantium. Ratione corporis itaque aliquam atque molestiae ea aperiam, nihil ut tenetur distinctio?',
+                    date: '10:22'
+                },
+                {
+                    id: 2,
+                    content: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cumque voluptatem quaerat facilis! iquam cumque ipsum odio sit laudantium. Ratione corporis itaque aliquam atque molestiae ea aperiam, nihil ut tenetur distinctio?',
+                    date: '10:20'
+                }
+            ]
         }
     }
 })

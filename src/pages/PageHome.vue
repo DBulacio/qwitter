@@ -32,6 +32,7 @@
                     color="primary"
                     label="Qweet" 
                     no-caps
+                    @click="addNewQweet"
                 />
             </div>
         </div>
@@ -94,7 +95,8 @@
                         round
                         size="sm"
                         color="grey"
-                        icon="fas fa-trash" 
+                        icon="fas fa-trash"
+                        @click="deleteQweet(qweet)"
                     />
                 </div>
             </q-item-section>
@@ -129,6 +131,22 @@ export default defineComponent({
                     date: '10:20'
                 }
             ]
+        }
+    },
+    methods: {
+        addNewQweet() {
+            let newQweet = {
+                id: this.qweets.length + 1,
+                content: this.newQweetContent,
+                date: '10:24'
+            }
+            this.qweets.unshift(newQweet)
+            this.newQweetContent = ''
+        },
+        deleteQweet(qweet) {
+            let idToDelete = qweet.id
+            let index = this.qweets.findIndex(qweet => qweet.id === idToDelete)
+            this.qweets.splice(index, 1)
         }
     }
 })

@@ -1,5 +1,6 @@
 <template>
-    <q-page >
+    <q-page class="relative-position">
+        <q-scroll-area class="absolute fullscreen">
         <!-- input qweet -->
         <div class="q-py-lg q-px-md row items-end q-col-gutter-md">
             <div class="col">
@@ -64,8 +65,10 @@
                     <q-item-section>
                         <q-item-label class="text-subtitle1">
                             <strong>Mindy Flower</strong>
+                            <!-- date-fns para que muestre la fecha relativa -->
                             <span class="text-grey-7">
-                                @mindy__flower
+                                @mindy__flower 
+                                <br class="lt-md"> &bull; {{ qweet.date }}
                             </span>
                         </q-item-label>
                         <q-item-label class="qweet-content text-body1">
@@ -105,15 +108,10 @@
                             />
                         </div>
                     </q-item-section>
-
-                    <q-item-section side top>
-                        <!-- date-fns para que muestre la fecha relativa -->
-                        {{ qweet.date }}
-                    </q-item-section>
                 </q-item>
             </transition-group>
         </q-list>
-
+        </q-scroll-area>
     </q-page>
 </template>
 
